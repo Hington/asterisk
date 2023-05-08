@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./asset/img/icon-removebg-preview.png" type="image/x-icon">
+    <link rel="stylesheet" href="./asset/css/config.css">
+    <title>Config</title>
+</head>
+<body>
+    <div class="container">
+        <h4>Asterisk permet de transformer un ordinateur en commutateur téléphonique performant.
+            nous utiliserons ici Unbutu 18.04 et Asterisk-16.30.0
+        </h4>
+        <h1>Installation</h1>
+        <p>On effectue les mise a jour de Unbutu et on passe au téléchargement d'asterisk</p>
+        <div class="cardre">
+            <pre>$ sudo apt update && sudo apt upgrade && sudo apt full-apgrade && sudo apt autoremove && sudo apt autoclear -y</pre>
+            <pre>$ cd /usr/src</pre>
+            <pre>$ wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-16-current.tar.gz</pre>
+            <pre>$ tar -xvzf asterisk-16-current.tar.gz</pre>
+            <pre>$ cd asterisk-16.30.0</pre>
+            <h5 class="comme">#Nous procédons ensuite à l'installation des dépendances :</h5>
+            <pre>$ sudo apt install build-essential libxml2-dev libncurses5-dev linux-headers-`uname -r` libsqlite3-dev libssl-dev libedit-dev uuid-dev libjansson-dev</pre>
+            <h5 class="comme">#On configure Asterisk avant l'installation avec les deux commande ci dessous</h5>
+            <pre>$ ./configure</pre>
+            <pre>$ make menuselect</pre>
+        </div>
+        <p class="span">
+            Dans le menu qui s'affiche, allez dans <span>Core Sound Package</span> et cochez à l'aide de la touche Espace <span>CORE-SOUNDS-FR-ULAW</span>. Quittez en pressant la touche Echap. Allez ensuite dans Music On Hold File Packages, décochez <span>MOH-OPSOUND-WAV</span> et cochez <span>MOH-OPSOUND-ULAW</span>. Enfin, allez dans <span>Extras Sound Packages</span> et cochez <span>EXTRA-SOUNDS-FR-ULAW</span>.
+            Revenez à l'écran principal et appuyez sur <span>Echap</span> pour terminer et pressez <span>S</span> pour sauvegarder.
+            Enfin tapez les commandes suivantes pour terminer l’installation :
+        </p>
+        <div class="cardre">
+            <pre>$ make</pre>
+            <pre>$ make install</pre>
+            <pre>$ make samples</pre>
+            <pre>$ make config</pre>
+        </div>
+        <p>Enfin, lancez Asterisk avec la commande suivante :</p>
+        <div class="cardre">
+            <pre>$ /etc/init.d/asterisk start</pre>
+        </div>
+        <p>Lancez la console Asterisk avec la commande suivante :</pre>
+        <div class="cardre">
+            <pre>$ sudo asterisk -r</pre>
+        </div>
+        <h1>Configuration</h1>
+        <p>Avant d’éditer les fichiers pour la première fois, on les deplacés comme ceci :</p>
+        <div class="cardre">
+            <pre>$ sudo mv /etc/asterisk/sip.conf /etc/asterisk/sip.conf.original</pre>
+            <pre>$ sudo mv /etc/asterisk/extensions.conf /etc/asterisk/extensions.conf.original</pre>
+            <pre>$ sudo mv /etc/asterisk/voicemail.conf /etc/asterisk/voicemail.conf.original</pre>
+        </div>
+        <p>En suite on fait</p>
+        <div class="cardre">
+            <pre>$ sudo nano /etc/asterisk/sip.conf</pre>
+        </div>
+        <div class="cardre">
+            <pre>
+                [default_template](!)              ; Nom du template . Le « ! » indique qu’il s’agit d’un Template
+                type=friend                        ; Type d'objet SIP (friend = utilisateur)
+                host=dynamic                       ; L’utilisateur n’est pas associé à une IP fixe
+                dtmfmode=rfc2833                   ; Mode DTMF
+                disallow=all                       ; Interdit tous les codecs
+                allow=ulaw                         ; Autorise le codec ulaw
+                nat=never                          ; L'utilisateur ne se trouve pas derrière un NAT
+                hassip=yes                         ; L’utilisateur possède un compte SIP
+                hasiax=yes                         ; L’utilisateur possède un compte iax
+                callwaiting = yes                  ; L’utilisateur peut mettre des appels en attente
+                transfer=yes                       ; L’utilisateur peut transférer des appels
+                canpark=yes                        ; L’utilisateur peut mettre des appels dans le parking
+                hasvoicemail=yes                   ; L’utilisateur possède une boîte vocale 
+                deny=0.0.0.0/0.0.0.0               ; Range d’IP non-autorisées pour le client
+                permit=192.168.1.0/255.255.255.0   ; Range d’IP autorisées pour le client
+                qualify=yes                        ; Permet le monitoring
+                nat=yes
+                <h5 class="comme">#Nous pouvons ensuite créer des utilisateurs :</h5 class="comme">
+                [100](default_template)             ; Numéro SIP et Template utilisé
+                fullname = Laetitia yawa	    ; Nom complet de l'utilisateur (ce qui s'affichera sur le téléphone)
+                username = Ouattara	            ; Nom d'utilisateur
+                secret = 123456                     ; Mot de passe
+                context = work	                    ; Contexte (exploité par le fichier extensions.conf)
+
+                [101](default_template)							
+                fullname = Boni Hington		
+                username = Blanc			
+                secret=123456			
+                context = work			
+
+                [200](default_template)						
+                fullname = John DOE		
+                username = jdoe			
+                secret=123456			
+                context = work
+		
+            </pre>
+        </div>
+        <p>Les Voicemails permettent de laisser des messages aux utilisateurs lors-ce-que ceux-ci ne sont pas disponibles. Il s’agit donc de leur messagerie vocale.</p>
+        <p>Le fichier à éditer est le suivant :</p>
+        <div class="cardre">
+            <pre>$ nano /etc/asterisk/voicemail.conf</pre>
+        </div>
+        <div class="cardre">
+            <pre>
+                [general]
+                maxmsg=100          ; Nombre max de message sur la Voicemail. Si elle est pleine, il n'est pas possible de rajouter des messages
+                maxsecs=0           ; Durée max d'un message. "0" = pas de limite
+                minsecs=2           ; Durée minimum d'un message
+                maxlogins=3         ; Nombre max d'erreur de login
+                review=no           ; Permet à l'appelant de réécouter son message avant de le transmettre à la Voicmail. Accessible en terminant le message par #
+                saycid=no           ; Dicte le numéro de l'appelant avant de jouer le message qu'il a laissé
+
+                [main_vm]
+                100 => , Laetitia yawa
+                101 => , Boni hington
+                200 => , John doe
+            </pre>
+        </div>
+    </div>
+</body>
+</html>

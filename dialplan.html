@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./asset/img/icon-removebg-preview.png" type="image/x-icon">
+    <link rel="stylesheet" href="./asset/css/config.css">
+    <title>DialPlan</title>
+</head>
+<body>
+    <div class="container">
+        <h4>Le DialPlan est ce qui va définir le routage des appels à travers le serveur.</h4>
+        <h1>Configuration</h1>
+        <p>La configuration du DialPlan est contenue dans le fichier suivant :</p>
+        <div class="cardre">
+            <pre>$ sudo nano /etc/asterisk/extensions.conf</pre>
+        </div>
+        <div class="cardre">
+            <pre>
+                [work]                              ; Nom du contexte
+                exten => 100,1,Answer()             ; permet de décrocher l’appel
+                exten => 100,n,Dial(SIP/100,40)     ; permet de composer un numéro, avec un timeout en cas de non-réponse
+                exten => 100,n,Voicemail(100@main_vm)  ; permet de joindre la messagerie de l’utilisateur spécifié
+                exten => 100,n,HangUp()             ; permet de raccrocher l’appel
+
+                exten => 101,1,Answer()             
+                exten => 101,n,Dial(SIP/101,40)     
+                exten => 101,n,Voicemail(101@main_vm)  
+                exten => 101,n,HangUp()             
+
+                exten => 200,1,Answer()             
+                exten => 200,n,Dial(SIP/200,40)     
+                exten => 200,n,Voicemail(200@main_vm)  
+                exten => 200,n,HangUp()
+                
+                [accueil]
+                exten => _909[123],1,Answer()
+                exten => _909[123],n,playback(custom/smscovid)  ;permet de jouer un son            
+                exten => _909[123],n,Dial(SIP/{EXTEN},40)     
+                exten => _909[123],n,HangUp()
+                </pre>
+        </div>
+        
+    </div>
+</body>
+</html>

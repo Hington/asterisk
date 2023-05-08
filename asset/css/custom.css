@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background: url(../img/bg1.jpg) no-repeat 50%;
+    background-size: cover;
+    height: 25vh;
+    width: 100%;
+}
+header .container h1{
+    color: #fff;
+    padding-top: 40px;
+    text-align: center;
+}
+header .container h3{
+    color: #fff;
+    padding-top: 40px;
+    text-align: center;
+}
+.sectoion_1{
+    /* background-color: aqua; */
+    margin: -25px 50px 0;
+}
+.sectoion_1 .container{
+    display: grid;
+    width: 85%;
+    grid-template-columns: repeat(auto-fit, 230px);
+    grid-gap: 10px;
+    margin: 0 auto;
+    justify-content: center;
+}
+.sectoion_1 .container .background{
+    width: 200px;
+    height: 200px;
+    background-color: #FFBEBE;
+    box-shadow: 4px 4px 14px 0 rgb(0 0 0 / 10%);
+    border-radius: 50%;
+    position: relative;
+}
+.sectoion_1 .container img{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+}
+.sectoion_1 .container .img1{
+   height: 100px;
+   width: 100px;
+}
+.sectoion_1 .container .img2{
+   height: 54,49px;
+   width: 100px;
+}
+.sectoion_1 .container .img3{
+   height: 125px;
+   width: 148,98px;
+}
+.sectoion_1 .container .img4{
+   height: 105px;
+   width: 181px;
+}
+.sectoion_1 .container .partie1{
+    margin: -36px 9px 25px -48px
+}
+.sectoion_1 .container .partie1 h2{
+    margin: 14px 53px 25px -83px;
+    text-align: center;
+}
+.sectoion_1 .container .partie2{
+    margin: 59px 14px 0;
+}
+.sectoion_1 .container .partie2 h2{
+    margin:13px -79px 13px -102px;
+    text-align: center;
+}
+.sectoion_1 .container .partie3{
+    margin: 205px 6px 0;
+}
+.sectoion_1 .container .partie3 h2{
+    margin:15px -44px 15px -74px;
+    text-align: center;
+}
+.sectoion_1 .container .partie4{
+    margin: 309px 8px 60px;
+}
+.sectoion_1 .container .partie4 h2{
+    margin: 15px 0px 15px 0;
+    text-align: center;
+}
+
+.admins{
+ margin: -210px 30px 5px;
+}
+.h3{
+ padding: 0 25px;
+}
+.admin{
+  display: flex;
+  margin: 15px;
+}
+.admin .span{
+    background: url(/asset/img/icon-removebg-preview.png) 50% no-repeat;
+    background-size: cover;
+    width: 90px;
+    height: 90px;
+    border: 2px dashed #FF8310;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+footer{
+    background-color: rgb(255 132 16 / 40%);
+    padding: 23px;
+}
+footer h3{
+    text-align: center;
+    padding: 15px;
+}
+.sectoion_1 .container .partie1 a,
+.sectoion_1 .container .partie2 a, 
+.sectoion_1 .container .partie3 a,
+.sectoion_1 .container .partie4 a{
+            color: #000;
+            text-decoration: none;
+        }
+.sectoion_1 .container .partie1 a:hover,
+.sectoion_1 .container .partie2 a:hover, 
+.sectoion_1 .container .partie3 a:hover,
+.sectoion_1 .container .partie4 a:hover{
+            cursor: pointer;
+            opacity: 0.3;
+            color: blue;
+        }

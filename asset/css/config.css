@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 90%;
+    margin: 15px auto;
+    border: none;
+    box-shadow: 2px 2px 15px 1px #c9c9c9;
+    border-radius: 15px;
+    padding: 20px;
+}
+.container h4{
+    text-transform: uppercase;
+    font-size: 20px;
+    padding: 20px;
+    font-weight: bolder;
+    color: #FF8310;
+}
+
+.cardre{
+    background: #000;
+    color: #00ff55f7;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    overflow: auto;
+
+}
+.cardre p{
+    padding: 5px;
+    margin-right: 10px;
+}
+.comme{
+    color: #00dcff;
+    padding: 5px 0;
+}
+h1{
+    text-indent: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+p{
+    padding: 5px;
+    text-indent: 25px;
+}
+.span span{
+    color: #FF8310;
+    font-weight: 800;
+}
+
+.tet{
+    color: red;
+}
+.liste{
+    color: yellow;
+}

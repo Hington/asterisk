@@ -1,0 +1,108 @@
+@media screen and (min-width:953px) and (max-width:1217px){
+    .sectoion_1 .container .partie4 {
+        margin: -130px 5px 66px 520px;
+    }
+    .sectoion_1 .container .partie4 h2 {
+        margin: 15px 0px 15px 76px;
+    }
+    .sectoion_1 .container .background {
+        width: 150px;
+        height: 150px;
+    }
+    .sectoion_1 .container h2{
+        font-size: 15px;
+    }
+    .sectoion_1 .container .partie2 {
+        margin: 59px -77px 0;
+    }
+    .sectoion_1 .container .partie2 h2 {
+        margin: 13px 66px 13px -193px;
+        text-align: center;
+    }
+    .sectoion_1 .container .partie3 {
+        margin: 172px -154px 0;
+        width: 500px;
+    }
+    .sectoion_1 .container .partie3 h2 {
+        margin: 15px 377px 15px 0px;
+    }  
+    .sectoion_1 .container .img4 {
+        height: 89px;
+        width: 130px;
+    }
+} 
+@media screen and (min-width:1218px) and (max-width:1234px){
+    .sectoion_1 .container .partie4 {
+        margin: 255px 5px 66px -209px;
+        width: 200px;
+    }
+    .sectoion_1 .container .partie4 h2 {
+        margin: 15px 0px 15px -40px;
+    }
+    .sectoion_1 .container .background {
+        width: 150px;
+        height: 150px;
+    }
+    .sectoion_1 .container h2{
+        font-size: 15px;
+    }
+    .sectoion_1 .container .partie2 {
+        margin: 59px -77px 0;
+    }
+    .sectoion_1 .container .partie2 h2 {
+        margin: 13px 66px 13px -193px;
+        text-align: center;
+    }
+    .sectoion_1 .container .partie3 {
+        margin: 172px -154px 0;
+        width: 500px;
+    }
+    .sectoion_1 .container .partie3 h2 {
+        margin: 15px 377px 15px 0px;
+    } 
+    .sectoion_1 .container .img4 {
+        height: 89px;
+        width: 130px;
+    } 
+} 
+
+
+@media screen and (min-width:669px) and (max-width:952px){
+    .sectoion_1 .container .partie1 {
+        margin: 59px 9px 0px 11px;
+    }
+    .sectoion_1 .container .partie1 h2 {
+        margin: 14px 16px 5px 4px;
+    }
+    .sectoion_1 .container .partie3 {
+        margin: 30px 6px 0;
+    }
+    .sectoion_1 .container .partie4 {
+        margin: 30px 8px 60px;
+    }
+    .sectoion_1 .container h2{
+        font-size: 15px;
+    }
+    }
+
+    @media screen and (max-width:668px){
+
+        .sectoion_1 .container h2{
+            font-size: 15px;
+        }
+        .sectoion_1 .container .partie1 {
+            margin: 2px auto 0px;
+        }
+        .sectoion_1 .container .partie1 h2 {
+            margin: 14px 0px 0px 0px;
+            text-align: center;
+        }
+        .sectoion_1 .container .partie2, 
+        .sectoion_1 .container .partie3,
+        .sectoion_1 .container .partie4{
+            margin: 5px auto 0;
+        }
+        header .container h3 {
+            padding-top: 20px;
+        }
+    }
