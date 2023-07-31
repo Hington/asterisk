@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Juillet</title>
+</head>
+<body>
+    <div class="titre  animate__flipInX">
+        <h1>Résumé des differents étapes du Projet du mois de juillet</h1>
+    </div>
+    <section class="projet">
+        <h1>Projet</h1>
+        <p>Il nous est demandé de développer une solution pour un restaurant</p>
+    </section>
+    <section class="installation">
+        <div class="couverture"></div>
+        <h1>Installation</h1>
+        <p>Pour l'Installation nous avons 4 étape</p> 
+        <ul>
+            <li>Mise à jour du système</li>
+            <li>Installer les dépendences d'asterisk</li>
+            <li>Télécharger de l'archive d'asterisk </li>
+            <li>Construire et Installer asterisk</li>
+        </ul>
+    </section>
+    <section class="configuration">
+        <h1>Configuration</h1>
+        <div class="image"><img src="./img/uc_asterisk_architecture.jpg" alt=""></div>
+        
+        <p>Nous allons commencé par déplacé les fichiers sip.con, extensions.conf,Voicemail.conf, queues.conf respectivement  vers sip.conf.o, extensions.conf.o, Voicemail.conf.o et queues.conf.o</p>
+        <main>
+            $ sudo mv sip.conf sip.conf.o <br>
+            $ sudo mv extensions.conf extensions.conf.o <br>
+            $ sudo mv Voicemail.conf Voicemail.conf.o <br>
+            $ sudo mv queues.conf queues.conf.o
+        </main>
+        <h3>Creaction des utilisateurs</h3>
+        <p>La configuration des utilisateur est contenue dans le fichier <span>sip.conf</span></p>
+        <a href="./fichiers/sip.conf" download="sip.conf"> Télécharger la configuration du fichier sip.conf</a>
+
+        <h3>Voicemail</h3>
+        <p>La configuration du Voicemail est contenue dans le fichier <span>Voicemail.conf</span>. Il s’agit donc de leur messagerie vocale.</p>
+        <a href="./fichiers/Voicemail.conf" download="Voicemail.conf"> Télécharger la configuration du fichier voicemail.conf</a>
+
+        <h3>Queues</h3>
+        <p>La configuration de Queues est contenue dans le fichier <span>queues.conf</span>. Les files d’attente peuvent être utiles pour gérer les appels entrants</p>
+        <a href="./fichiers/queues.conf" download="queues.conf"> Télécharger la configuration du fichier queues.conf</a>
+
+        <h3>DialPlant</h3>
+        <p>La configuration du DialPlan est contenue dans le fichier <span>extensions.conf</span>. Le DialPlan est ce qui va définir le routage des appels à travers le serveur</p>
+        <a href="./fichiers/exetnsions.conf" download="exetnsions.conf"> Télécharger la configuration du fichier extensions.conf</a> <br> <br>
+
+        <a href="https://mm.tt/app/map/2875597797?t=N07IKffXO2">Voir la maquette montrant le fonctionnement du DialPlan</a>
+    </section>
+</body>
+</html>

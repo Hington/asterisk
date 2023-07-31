@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Handjet:wght@200&family=Indie+Flower&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background: rgb(30, 29, 29);
+    color: white;
+    font-size: 28px;
+    letter-spacing: 2px;
+    /* font-family: 'Cinzel', serif;
+font-family: 'Indie Flower', cursive; */
+
+font-family: 'Handjet', cursive;
+
+    
+}
+.text img{
+    width: 90%;
+    height: 90%;
+    border: 2px solid black;
+}
+.titre h1,
+.projet h1,
+.installation h1,
+.configuration h1{
+    font-size: 20px;
+    color: rgb(41, 3, 81);
+    text-transform: capitalize;
+    text-align: center;
+    margin: 10px;
+    color: rgb(0, 0, 0);
+    z-index: 1000;
+    font-family: 'Cinzel', serif;
+    padding: 15px;
+    color: white;
+}
+.projet p,
+.installation p,
+.configuration p{
+    margin: 8px;
+    text-indent: 25px;
+    padding: 5px;
+}
+.titre h1{
+    border: 2px solid rgb(248, 245, 178);
+    border-radius: 5px;
+    text-shadow:-2px 3px 0px rgb(193 172 172 / 93%);
+    margin: 15px;
+    color: white;
+}
+.projet{
+    margin: 15px;
+}
+.projet img{
+    width: 50%;
+}
+.installation {
+   background: url(./img/2-1.jpg) no-repeat 50% 50%;
+   background-size: cover;
+   color: white;
+   width: 100%;
+   height: 50%;
+   margin: 15px 0;
+   position: relative;
+    z-index: -2;
+}
+.installation .couverture{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1, 1, 1, 0.783);
+    z-index: -1;
+}
+
+.installation ul{
+    padding: 20px;
+    margin-left: 15px;
+}
+
+.configuration .image {
+    width:90%;
+    height: 350px;
+    margin: 2px auto;
+    position: relative;
+}
+.configuration img {
+    width: 100%;
+    height: 100%;
+    border-radius: 2%;
+    position: absolute;
+}
+.configuration main{
+    background-color: black;
+    padding: 10px;
+    color: lime;
+    width: 80%;
+    margin: 2px auto;
+    border-radius: 10px;
+}
+.configuration a{
+    color: rgb(248, 245, 178);
+    text-decoration: none;
+    padding: 5px;
+    margin: 10px;
+}
+.configuration h3{
+    padding: 8px;
+    margin: 10px;
+    text-decoration: underline;
+}
+
+    @keyframes flipInX {
+    from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+    }
+    40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    }
+    60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+    }
+    80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    }
+    to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+    }
+    }
+
+    @keyframes rotateInUpLeft {
+    from {
+    -webkit-transform: rotate3d(0, 0, 1, 45deg);
+    transform: rotate3d(0, 0, 1, 45deg);
+    opacity: 0;
+    }
+    to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    }
+    }
+    .animate__rotateInUpLeft {
+    animation-name: rotateInUpLeft;
+    transform-origin: left bottom;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    }
+    .animate__flipInX {
+    backface-visibility: visible !important;
+    animation-name: flipInX;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    }
