@@ -27,7 +27,8 @@ font-family: 'Handjet', cursive;
 .titre h1,
 .projet h1,
 .installation h1,
-.configuration h1{
+.configuration h1,
+.solution h1{
     font-size: 20px;
     color: rgb(41, 3, 81);
     text-transform: capitalize;
@@ -112,6 +113,12 @@ font-family: 'Handjet', cursive;
     padding: 8px;
     margin: 10px;
     text-decoration: underline;
+}
+.solution iframe {
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
     @keyframes flipInX {
